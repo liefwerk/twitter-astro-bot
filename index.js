@@ -38,9 +38,23 @@ async function getRequest() {
   try {
     // Make request
     const response = await getRequest();
-    console.dir(response, {
-      depth: null
-    });
+    // console.dir(response, {
+    //   depth: null
+    // });
+
+    // get last tweet
+    let lastTweet = response.data[0]
+    // get last tweet's id & author's id
+    let authorId = lastTweet.author_id;
+    let tweetId = lastTweet.id;
+    let text = lastTweet.text;
+
+    // console.log(authorId, tweetId);
+    console.log("last tweet's text", text);
+
+    const regex = /^https.*/mg;
+    const found = text.match(regex);
+    console.log("found", found[1]);
 
   } catch (e) {
     console.log(e);
