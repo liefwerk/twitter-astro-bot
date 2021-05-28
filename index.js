@@ -1,6 +1,8 @@
 require('dotenv').config()
 
 const needle = require('needle');
+var { tall } = require('tall')
+var request = require('request')
 
 // The code below sets the bearer token from your environment variables
 // To set environment variables on macOS or Linux, run the export command below from the terminal:
@@ -45,16 +47,40 @@ async function getRequest() {
     // get last tweet
     let lastTweet = response.data[0]
     // get last tweet's id & author's id
-    let authorId = lastTweet.author_id;
-    let tweetId = lastTweet.id;
+    // let authorId = lastTweet.author_id;
+    // let tweetId = lastTweet.id;
     let text = lastTweet.text;
 
     // console.log(authorId, tweetId);
-    console.log("last tweet's text", text);
+    // console.log("last tweet's text", text);
 
     const regex = /^https.*/mg;
     const found = text.match(regex);
     console.log("found", found[1]);
+
+    // tall('https://t.co/Jxcm5YTBdW')
+    //   .then(function (unshortenedUrl) {
+    //     console.log('Tall url', unshortenedUrl)
+    //   })
+    //   .catch(function (err) {
+    //     console.error('AAAW 👻', err)
+    //   })
+
+    var uri = 'https://t.co/Jxcm5YTBdW';
+    request(
+      {
+        uri: uri,
+        followRedirect: false,
+      },
+      function (err, httpResponse) {
+        if (err) {
+          return console.error(err)
+        }
+        console.log('working');
+        console.log(httpResponse || uri);
+        console.log(httpResponse.headers.location || uri);
+      }
+    )
 
   } catch (e) {
     console.log(e);
@@ -62,3 +88,4 @@ async function getRequest() {
   }
   process.exit();
 })();
+

@@ -6,7 +6,12 @@ var OAuth2 = google.auth.OAuth2;
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/youtube-nodejs-quickstart.json
-var SCOPES = ['https://www.googleapis.com/auth/youtube.readonly'];
+var SCOPES = [
+  'https://www.googleapis.com/auth/youtube',
+  'https://www.googleapis.com/auth/youtube.force-ssl',
+  'https://www.googleapis.com/auth/youtubepartner',
+  'https://www.googleapis.com/auth/youtube.readonly',
+];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
   process.env.USERPROFILE) + '/.credentials/';
 var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart.json';
@@ -103,24 +108,38 @@ function storeToken(token) {
  */
 function getChannel(auth) {
   var service = google.youtube('v3');
-  service.channels.list({
+
+  // thomas pesquet playlist's ID: PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA
+
+  service.playlistItems.insert({
     auth: auth,
-    part: 'snippet,contentDetails,statistics',
-    forUsername: 'GoogleDevelopers'
+    resource: {
+      snippet: {
+        playlistId: "PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA",
+        channelId: "UCCBNWBPdA4yQQBdEwEFODUg",
+        resourceId: {
+          kind: "youtube#video",
+          videoId: "T1NAvM72Q2Q",
+        }
+      }
+    },
+    part: 'snippet, id',
   }, function (err, response) {
     if (err) {
       console.log('The API returned an error: ' + err);
       return;
     }
-    var channels = response.data.items;
-    if (channels.length == 0) {
-      console.log('No channel found.');
+
+    var playlists = response.data.items;
+    if (playlists.length == 0) {
+      console.log('No playlist found.');
     } else {
-      console.log('This channel\'s ID is %s. Its title is \'%s\', and ' +
-        'it has %s views.',
-        channels[0].id,
-        channels[0].snippet.title,
-        channels[0].statistics.viewCount);
+      console.log(playlists);
+      // console.log('This channel\'s ID is %s. Its title is \'%s\', and ' +
+      //   'it has %s views.',
+      //   channels[0].id,
+      //   channels[0].snippet.title,
+      //   channels[0].statistics.viewCount);
     }
-  });
+  })
 }
