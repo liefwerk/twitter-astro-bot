@@ -1,8 +1,8 @@
 require('dotenv').config()
 
 const needle = require('needle');
-var { tall } = require('tall')
-var request = require('request')
+// var { tall } = require('tall');
+var request = require('request');
 
 // The code below sets the bearer token from your environment variables
 // To set environment variables on macOS or Linux, run the export command below from the terminal:
@@ -31,6 +31,7 @@ async function getRequest() {
   if (res.body) {
     return res.body;
   } else {
+    console.log('error get Request');
     throw new Error('Unsuccessful request');
   }
 }
@@ -43,9 +44,8 @@ async function getRequest() {
     // console.dir(response, {
     //   depth: null
     // });
-
     // get last tweet
-    let lastTweet = response.data[0]
+    let lastTweet = response.data[0];
     // get last tweet's id & author's id
     // let authorId = lastTweet.author_id;
     // let tweetId = lastTweet.id;
@@ -54,9 +54,10 @@ async function getRequest() {
     // console.log(authorId, tweetId);
     // console.log("last tweet's text", text);
 
-    const regex = /^https.*/mg;
-    const found = text.match(regex);
-    console.log("found", found[1]);
+    let regex = /^https.*/mg;
+    let found = text.match(regex);
+    let link = found[1];
+    // console.log("found", found[1]);
 
     // tall('https://t.co/Jxcm5YTBdW')
     //   .then(function (unshortenedUrl) {
@@ -66,10 +67,10 @@ async function getRequest() {
     //     console.error('AAAW 👻', err)
     //   })
 
-    var uri = 'https://t.co/Jxcm5YTBdW';
+    // var uri = 'https://t.co/Jxcm5YTBdW';
     request(
       {
-        uri: uri,
+        uri: link,
         followRedirect: false,
       },
       function (err, httpResponse) {
@@ -83,7 +84,7 @@ async function getRequest() {
     )
 
   } catch (e) {
-    console.log(e);
+    console.log('error :', e);
     process.exit(-1);
   }
   process.exit();

@@ -2,6 +2,7 @@
 var fs = require('fs');
 var readline = require('readline');
 var { google } = require('googleapis');
+const { REPL_MODE_SLOPPY } = require('repl');
 var OAuth2 = google.auth.OAuth2;
 
 // If modifying these scopes, delete your previously saved credentials
@@ -10,7 +11,7 @@ var SCOPES = [
   'https://www.googleapis.com/auth/youtube',
   'https://www.googleapis.com/auth/youtube.force-ssl',
   'https://www.googleapis.com/auth/youtubepartner',
-  'https://www.googleapis.com/auth/youtube.readonly',
+  // 'https://www.googleapis.com/auth/youtube.readonly',
 ];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
   process.env.USERPROFILE) + '/.credentials/';
@@ -110,36 +111,25 @@ function getChannel(auth) {
   var service = google.youtube('v3');
 
   // thomas pesquet playlist's ID: PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA
-
+  // service.playlistItems.lis)
   service.playlistItems.insert({
     auth: auth,
     resource: {
       snippet: {
         playlistId: "PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA",
-        channelId: "UCCBNWBPdA4yQQBdEwEFODUg",
         resourceId: {
           kind: "youtube#video",
-          videoId: "T1NAvM72Q2Q",
+          videoId: "JZYnw3GBAlU",
         }
       }
     },
     part: 'snippet, id',
-  }, function (err, response) {
-    if (err) {
-      console.log('The API returned an error: ' + err);
-      return;
+  }).then(function (response) {
+
+    if (response.status === 200) {
+      let title = response.data.snippet.title;
+      console.log(`${title} has been posted in the playlist.`);
     }
 
-    var playlists = response.data.items;
-    if (playlists.length == 0) {
-      console.log('No playlist found.');
-    } else {
-      console.log(playlists);
-      // console.log('This channel\'s ID is %s. Its title is \'%s\', and ' +
-      //   'it has %s views.',
-      //   channels[0].id,
-      //   channels[0].snippet.title,
-      //   channels[0].statistics.viewCount);
-    }
-  })
+  }).catch(function (err) { console.error("Execute error", err); });
 }
