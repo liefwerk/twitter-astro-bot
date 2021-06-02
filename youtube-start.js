@@ -24,7 +24,7 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
     return;
   }
   // Authorize a client with the loaded credentials, then call the YouTube API.
-  authorize(JSON.parse(content), getChannel);
+  authorize(JSON.parse(content), addPlaylistItem);
 });
 
 /**
@@ -107,7 +107,7 @@ function storeToken(token) {
  *
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
-function getChannel(auth) {
+function addPlaylistItem(auth) {
   var service = google.youtube('v3');
 
   // thomas pesquet playlist's ID: PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA
