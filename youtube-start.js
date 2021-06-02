@@ -5,6 +5,8 @@ var { google } = require('googleapis');
 const { REPL_MODE_SLOPPY } = require('repl');
 var OAuth2 = google.auth.OAuth2;
 
+var { getVideoId } = require('./twitter-start.js')
+
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/youtube-nodejs-quickstart.json
 var SCOPES = [
@@ -110,26 +112,41 @@ function storeToken(token) {
 function addPlaylistItem(auth) {
   var service = google.youtube('v3');
 
-  // thomas pesquet playlist's ID: PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA
-  // service.playlistItems.lis)
-  service.playlistItems.insert({
-    auth: auth,
-    resource: {
-      snippet: {
-        playlistId: "PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA",
-        resourceId: {
-          kind: "youtube#video",
-          videoId: "JZYnw3GBAlU",
-        }
-      }
-    },
-    part: 'snippet, id',
-  }).then(function (response) {
+  const videoId = getVideoId();
 
-    if (response.status === 200) {
-      let title = response.data.snippet.title;
-      console.log(`${title} has been posted in the playlist.`);
-    }
+  videoId
+    .then(function (response) {
 
-  }).catch(function (err) { console.error("Execute error", err); });
+      console.log(response)
+      // service.playlistItems.insert({
+      //   auth: auth,
+      //   resource: {
+      //     snippet: {
+      //       playlistId: "PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA",
+      //       resourceId: {
+      //         kind: "youtube#video",
+      //         videoId: response.videoId,
+      //       }
+      //     }
+      //   },
+      //   part: 'snippet, id',
+      // }).then(function (response) {
+
+      //   if (response.status === 200) {
+      //     let title = response.data.snippet.title;
+      //     console.log(`${title} has been posted in the playlist.`);
+      //   }
+
+      // }).catch(function (err) { console.error("Execute error", err); });
+
+    }).catch(function (error) {
+
+      console.log('getVideoId() error', error)
+
+    });
+
+}
+
+module.exports = {
+  addPlaylistItem
 }
