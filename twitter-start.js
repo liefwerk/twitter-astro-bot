@@ -23,7 +23,9 @@ async function postTweet(tweetId, message) {
 
   await client.post('statuses/update', params)
     .then(function (response) {
-      console.log(response);
+      console.log('The tweet has been sent.', tweetId);
+      console.log('TweetId used in this request:', tweetId);
+      console.log(response.in_reply_to_status_id);
     }).catch(function (error) {
       console.log(error)
     })
@@ -77,8 +79,6 @@ async function getVideoId() {
       let isVideoId = /[^=]*$/g;
       let videoIdResults = fullLink.match(isVideoId);
       vals.videoId = videoIdResults[0];
-
-      postTweet(lastTweet.id, '🤖🎺 La vidéo à été ajoutée à la playlist ! https://urlshortner.org/EHYmO @Thom_astro');
 
     }).catch(function (err) {
       console.log('error !', err);

@@ -1,11 +1,13 @@
 
 var fs = require('fs');
+const path = require('path');
 var readline = require('readline');
 var { google } = require('googleapis');
 const { REPL_MODE_SLOPPY } = require('repl');
 var OAuth2 = google.auth.OAuth2;
 
-var { getVideoId } = require('./twitter-start.js')
+var { getVideoId, postTweet } = require('./twitter-start.js')
+const jsonData = require('./data.json')
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/youtube-nodejs-quickstart.json
@@ -117,27 +119,53 @@ function addPlaylistItem(auth) {
   videoId
     .then(function (response) {
 
-      console.log(response)
-      // service.playlistItems.insert({
-      //   auth: auth,
-      //   resource: {
-      //     snippet: {
-      //       playlistId: "PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA",
-      //       resourceId: {
-      //         kind: "youtube#video",
-      //         videoId: response.videoId,
-      //       }
-      //     }
-      //   },
-      //   part: 'snippet, id',
-      // }).then(function (response) {
+      console.log(response);
+      let lastTweetId = response.tweetId;
 
-      //   if (response.status === 200) {
-      //     let title = response.data.snippet.title;
-      //     console.log(`${title} has been posted in the playlist.`);
-      //   }
+      const object = {
+        tweetId: lastTweetId,
+      }
+      const jsonString = JSON.stringify(object);
+      const filePath = path.join(process.cwd(), 'data.json');
 
-      // }).catch(function (err) { console.error("Execute error", err); });
+      if (jsonData.tweetId !== lastTweetId) {
+        fs.writeFile(filePath, jsonString, (err) => {
+          if (err) {
+            console.error(err);
+          } else {
+            console.log('Last TweetID has been updated!');
+          }
+        });
+
+        service.playlistItems.insert({
+          auth: auth,
+          resource: {
+            snippet: {
+              playlistId: "PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA",
+              resourceId: {
+                kind: "youtube#video",
+                videoId: response.videoId,
+              }
+            }
+          },
+          part: 'snippet, id',
+        }).then(function (response) {
+
+          if (response.status === 200) {
+            let title = response.data.snippet.title;
+            console.log(`${title} has been posted in the playlist.`);
+
+            console.log('tweetId being sent from main js file', lastTweetId);
+            postTweet(lastTweetId, '🤖🎺 La vidéo à été ajoutée à la playlist ! https://www.youtube.com/playlist?list=PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA @Thom_astro');
+          }
+
+        }).catch(function (err) { console.error("Execute error", err); });
+
+      } else {
+        console.log('This video has already been added to the playlist!');
+      }
+
+
 
     }).catch(function (error) {
 
