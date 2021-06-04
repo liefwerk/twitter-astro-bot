@@ -129,13 +129,6 @@ function addPlaylistItem(auth) {
       const filePath = path.join(process.cwd(), 'data.json');
 
       if (jsonData.tweetId !== lastTweetId) {
-        fs.writeFile(filePath, jsonString, (err) => {
-          if (err) {
-            console.error(err);
-          } else {
-            console.log('Last TweetID has been updated!');
-          }
-        });
 
         service.playlistItems.insert({
           auth: auth,
@@ -157,6 +150,14 @@ function addPlaylistItem(auth) {
 
             console.log('tweetId being sent from main js file', lastTweetId);
             postTweet(lastTweetId, '🤖🎺 La vidéo à été ajoutée à la playlist ! https://www.youtube.com/playlist?list=PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA @Thom_astro');
+
+            fs.writeFile(filePath, jsonString, (err) => {
+              if (err) {
+                console.error(err);
+              } else {
+                console.log('Last TweetID has been updated!');
+              }
+            });
           }
 
         }).catch(function (err) { console.error("Execute error", err); });

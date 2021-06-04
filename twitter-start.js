@@ -76,9 +76,22 @@ async function getVideoId() {
       maxRedirect: 10
     }).then(function (fullLink) {
 
-      let isVideoId = /[^=]*$/g;
-      let videoIdResults = fullLink.match(isVideoId);
-      vals.videoId = videoIdResults[0];
+      const regex = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[^&\s\?]+(?!\S))\/)|(?:\S*v=|v\/)))([^&\s\?]+)/mg;
+      let m;
+
+      while ((m = regex.exec(fullLink)) !== null) {
+        // This is necessary to avoid infinite loops with zero-width matches
+        if (m.index === regex.lastIndex) {
+          regex.lastIndex++;
+        }
+
+        // The result can be accessed through the `m`-variable.
+        m.forEach((match, groupIndex) => {
+          console.log(`Found match, group ${groupIndex}: ${match}`);
+        });
+
+        vals.videoId = m[1];
+      }
 
     }).catch(function (err) {
       console.log('error !', err);
