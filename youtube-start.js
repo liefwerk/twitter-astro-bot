@@ -119,7 +119,7 @@ function addPlaylistItem(auth) {
   videoId
     .then(function (response) {
 
-      console.log(response);
+      // console.log(response);
       let lastTweetId = response.tweetId;
 
       const object = {

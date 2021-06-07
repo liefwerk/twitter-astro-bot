@@ -85,11 +85,6 @@ async function getVideoId() {
           regex.lastIndex++;
         }
 
-        // The result can be accessed through the `m`-variable.
-        m.forEach((match, groupIndex) => {
-          console.log(`Found match, group ${groupIndex}: ${match}`);
-        });
-
         vals.videoId = m[1];
       }
 
