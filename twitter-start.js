@@ -8,6 +8,8 @@ const token = process.env.BEARER_TOKEN;
 const endpointRecent = "https://api.twitter.com/2/tweets/search/recent";
 const endpointUpdate = "https://api.twitter.com/1.1/statuses/update.json";
 
+var { logger } = require('./log-index');
+
 var Twitter = require('twitter');
 
 var client = new Twitter({
@@ -23,13 +25,10 @@ async function postTweet(tweetId, message) {
 
   await client.post('statuses/update', params)
     .then(function (response) {
-      console.log('The tweet has been sent.', tweetId);
-      console.log('TweetId used in this request:', tweetId);
-      console.log(response.in_reply_to_status_id);
+      logger.info('The tweet has been sent.', tweetId);
     }).catch(function (error) {
-      console.log(error)
+      logger.error("The tweet hasn't been sent", error);
     })
-
 }
 
 async function getRequest() {

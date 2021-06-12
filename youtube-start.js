@@ -6,6 +6,8 @@ var { google } = require('googleapis');
 const { REPL_MODE_SLOPPY } = require('repl');
 var OAuth2 = google.auth.OAuth2;
 
+var { logger } = require('./log-index');
+
 var { getVideoId, postTweet } = require('./twitter-start.js')
 const jsonData = require('./data.json')
 
@@ -119,7 +121,6 @@ function addPlaylistItem(auth) {
   videoId
     .then(function (response) {
 
-      // console.log(response);
       let lastTweetId = response.tweetId;
 
       const object = {
@@ -146,16 +147,15 @@ function addPlaylistItem(auth) {
 
           if (response.status === 200) {
             let title = response.data.snippet.title;
-            console.log(`${title} has been posted in the playlist.`);
+            logger.info(`${title} has been added to the playlist.`);
 
-            console.log('tweetId being sent from main js file', lastTweetId);
             postTweet(lastTweetId, '🤖🎺 La vidéo à été ajoutée à la playlist ! https://www.youtube.com/playlist?list=PLGo4WhVb-_D_HAIYk7hLxHPeJePcnTBQA @Thom_astro');
 
             fs.writeFile(filePath, jsonString, (err) => {
               if (err) {
                 console.error(err);
               } else {
-                console.log('Last TweetID has been updated!');
+                logger.info('Last TweetID has been updated!');
               }
             });
           }
@@ -163,7 +163,7 @@ function addPlaylistItem(auth) {
         }).catch(function (err) { console.error("Execute error", err); });
 
       } else {
-        console.log('This video has already been added to the playlist!');
+        logger.warn('This video has already been added to the playlist!');
       }
 
 
