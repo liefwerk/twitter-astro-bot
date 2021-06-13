@@ -91,8 +91,10 @@ async function getVideoId() {
       console.log('error !', err);
     });
 
+    console.log(seconLink)
+
   } catch {
-    console.log('err');
+    console.log('err getvideoid()');
   }
 
   return vals;
