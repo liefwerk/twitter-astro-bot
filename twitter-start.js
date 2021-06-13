@@ -34,7 +34,7 @@ async function postTweet(tweetId, message) {
 async function getRequest() {
 
   const params = {
-    'query': 'from:thom_astro -is:retweet #alphafipmusic',
+    'query': 'from:thom_astro #alphafipmusic',
     'tweet.fields': 'author_id'
   }
 
