@@ -23,4 +23,4 @@ For now, I do not know which one it is as I cannot get the description of that e
 
 - [x] Install a library with yarn for starting a webserver with localhost:8080
 - [x] Resolve the issue with the error while inserting new video inside a playlist
-- [ ] Link both APIs in one single file
+- [x] Link both APIs in one single file

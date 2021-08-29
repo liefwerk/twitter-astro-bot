@@ -116,6 +116,7 @@ function storeToken(token) {
 function addPlaylistItem(auth) {
   var service = google.youtube('v3');
 
+  logger.info('Calling getVideoId');
   const videoId = getVideoId();
 
   videoId

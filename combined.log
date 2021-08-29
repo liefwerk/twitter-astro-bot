@@ -374,3 +374,86 @@
 {"message":"Archive - Again (Version) has been added to the playlist.","level":"info"}
 {"message":"Last TweetID has been updated!","level":"info"}
 {"level":"info","message":"The tweet has been sent."}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"title":"Unauthorized","type":"about:blank","status":401,"detail":"Unauthorized","level":"info","message":"needle res body"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"data":[{"author_id":"437520768","id":"1431556915067162626","text":"#SpaceVibes 🎵 Imagination by @fosterthepeople 🎶 💭 \n\n#AlphaFIPMusic #Songs4Space @fipradio\nhttps://t.co/CjurpFgnvb https://t.co/FLYgpGakEe"},{"author_id":"437520768","id":"1431194787286241284","text":"#SpaceVibes 🎵 Again, by @archiveofficial 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/CjurpFxYTL\nhttps://t.co/wGdXoL60JX"},{"author_id":"437520768","id":"1430833395534286857","text":"#SpaceVibes 🎵 I'm Not Your Dog ❌🐕 by @baxterdury 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/VZBqWs9AVr"},{"author_id":"437520768","id":"1430471925055246341","text":"#SpaceVibes 🎵 Easy by @thisisMAILAN 🎶 #AlphaFIPMusic #Songs4Space \nhttps://t.co/DfqjiWgdD1\nhttps://t.co/5zU2Ac4MUR"},{"author_id":"437520768","id":"1430107363625750531","text":"🎶 Chase the Devil (Album Version) by @charmaxromeo 🎶  #Songs4Space #SpaceVibes #AlphaFipMusic @fipradio\n\nhttps://t.co/CjurpFgnvb https://t.co/V3UMJEB5B3"},{"author_id":"437520768","id":"1429748505267032066","text":"#SpaceVibes 🎵 On n'est pas comme ça, by Silmarils 🎶 #AlphaFIPMusic #Songs4Space\n\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/MO3JeYamuP"}],"meta":{"newest_id":"1431556915067162626","oldest_id":"1429748505267032066","result_count":6},"level":"info","message":"needle res body"}
+{"author_id":"437520768","id":"1431556915067162626","text":"#SpaceVibes 🎵 Imagination by @fosterthepeople 🎶 💭 \n\n#AlphaFIPMusic #Songs4Space @fipradio\nhttps://t.co/CjurpFgnvb https://t.co/FLYgpGakEe","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"data":[{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…"},{"author_id":"437520768","id":"1431556915067162626","text":"#SpaceVibes 🎵 Imagination by @fosterthepeople 🎶 💭 \n\n#AlphaFIPMusic #Songs4Space @fipradio\nhttps://t.co/CjurpFgnvb https://t.co/FLYgpGakEe"},{"author_id":"437520768","id":"1431194787286241284","text":"#SpaceVibes 🎵 Again, by @archiveofficial 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/CjurpFxYTL\nhttps://t.co/wGdXoL60JX"},{"author_id":"437520768","id":"1430833395534286857","text":"#SpaceVibes 🎵 I'm Not Your Dog ❌🐕 by @baxterdury 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/VZBqWs9AVr"},{"author_id":"437520768","id":"1430471925055246341","text":"#SpaceVibes 🎵 Easy by @thisisMAILAN 🎶 #AlphaFIPMusic #Songs4Space \nhttps://t.co/DfqjiWgdD1\nhttps://t.co/5zU2Ac4MUR"},{"author_id":"437520768","id":"1430107363625750531","text":"🎶 Chase the Devil (Album Version) by @charmaxromeo 🎶  #Songs4Space #SpaceVibes #AlphaFipMusic @fipradio\n\nhttps://t.co/CjurpFgnvb https://t.co/V3UMJEB5B3"},{"author_id":"437520768","id":"1429748505267032066","text":"#SpaceVibes 🎵 On n'est pas comme ça, by Silmarils 🎶 #AlphaFIPMusic #Songs4Space\n\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/MO3JeYamuP"}],"meta":{"newest_id":"1431923601075228678","oldest_id":"1429748505267032066","result_count":7},"level":"info","message":"needle res body"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"data":[{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…"},{"author_id":"437520768","id":"1431556915067162626","text":"#SpaceVibes 🎵 Imagination by @fosterthepeople 🎶 💭 \n\n#AlphaFIPMusic #Songs4Space @fipradio\nhttps://t.co/CjurpFgnvb https://t.co/FLYgpGakEe"},{"author_id":"437520768","id":"1431194787286241284","text":"#SpaceVibes 🎵 Again, by @archiveofficial 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/CjurpFxYTL\nhttps://t.co/wGdXoL60JX"},{"author_id":"437520768","id":"1430833395534286857","text":"#SpaceVibes 🎵 I'm Not Your Dog ❌🐕 by @baxterdury 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/VZBqWs9AVr"},{"author_id":"437520768","id":"1430471925055246341","text":"#SpaceVibes 🎵 Easy by @thisisMAILAN 🎶 #AlphaFIPMusic #Songs4Space \nhttps://t.co/DfqjiWgdD1\nhttps://t.co/5zU2Ac4MUR"},{"author_id":"437520768","id":"1430107363625750531","text":"🎶 Chase the Devil (Album Version) by @charmaxromeo 🎶  #Songs4Space #SpaceVibes #AlphaFipMusic @fipradio\n\nhttps://t.co/CjurpFgnvb https://t.co/V3UMJEB5B3"},{"author_id":"437520768","id":"1429748505267032066","text":"#SpaceVibes 🎵 On n'est pas comme ça, by Silmarils 🎶 #AlphaFIPMusic #Songs4Space\n\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/MO3JeYamuP"}],"meta":{"newest_id":"1431923601075228678","oldest_id":"1429748505267032066","result_count":7},"level":"info","message":"needle res body"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"message":"launching needle","level":"info"}
+{"data":[{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…"},{"author_id":"437520768","id":"1431556915067162626","text":"#SpaceVibes 🎵 Imagination by @fosterthepeople 🎶 💭 \n\n#AlphaFIPMusic #Songs4Space @fipradio\nhttps://t.co/CjurpFgnvb https://t.co/FLYgpGakEe"},{"author_id":"437520768","id":"1431194787286241284","text":"#SpaceVibes 🎵 Again, by @archiveofficial 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/CjurpFxYTL\nhttps://t.co/wGdXoL60JX"},{"author_id":"437520768","id":"1430833395534286857","text":"#SpaceVibes 🎵 I'm Not Your Dog ❌🐕 by @baxterdury 🎶 #AlphaFIPMusic #Songs4Space\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/VZBqWs9AVr"},{"author_id":"437520768","id":"1430471925055246341","text":"#SpaceVibes 🎵 Easy by @thisisMAILAN 🎶 #AlphaFIPMusic #Songs4Space \nhttps://t.co/DfqjiWgdD1\nhttps://t.co/5zU2Ac4MUR"},{"author_id":"437520768","id":"1430107363625750531","text":"🎶 Chase the Devil (Album Version) by @charmaxromeo 🎶  #Songs4Space #SpaceVibes #AlphaFipMusic @fipradio\n\nhttps://t.co/CjurpFgnvb https://t.co/V3UMJEB5B3"},{"author_id":"437520768","id":"1429748505267032066","text":"#SpaceVibes 🎵 On n'est pas comme ça, by Silmarils 🎶 #AlphaFIPMusic #Songs4Space\n\nhttps://t.co/DfqjiWgdD1\nhttps://t.co/MO3JeYamuP"}],"meta":{"newest_id":"1431923601075228678","oldest_id":"1429748505267032066","result_count":7},"level":"info","message":"needle res body"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"Trying getRequest","level":"info"}
+{"author_id":"437520768","id":"1431923601075228678","text":"RT @fipradio: On s'envole vers l'infini et au-delà avec le titre \"Tonight We Fly\" du groupe @divinecomedyhq en compagnie de @Thom_astro 🚀✨…","level":"info","message":"Last tweet:"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}
+{"message":"addPlaylistItem called!","level":"info"}
+{"message":"Calling getVideoId","level":"info"}

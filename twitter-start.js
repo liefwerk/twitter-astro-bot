@@ -48,7 +48,7 @@ async function getRequest() {
   if (res.body) {
     return res.body;
   } else {
-    console.log('error get Request');
+    console.log('error getRequest');
     throw new Error('Unsuccessful request');
   }
 }
@@ -65,12 +65,25 @@ async function getVideoId() {
 
     let lastTweet = response.data[0];
     let text = lastTweet.text;
-    vals.tweetId = lastTweet.id
+    vals.tweetId = lastTweet.id;
 
     let isLink = /^https.*/mg;
     let links = text.match(isLink);
-    secondLink = links[1];
+    console.log('text', text);
 
+    let secondLink = null;
+    console.log('before if statement');
+    console.log('links', links);
+    if (links.length > 1) {
+      console.log('>1');
+      secondLink = links[1];
+    } else {
+      console.log('<1');
+      console.log(links);
+      secondLink = links[0];
+    }
+
+    logger.info('YT link:', secondLink);
     await tall(secondLink, {
       maxRedirect: 10
     }).then(function (fullLink) {
